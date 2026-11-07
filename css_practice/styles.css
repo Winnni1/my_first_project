@@ -1,0 +1,153 @@
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #2c3e50;
+  padding: 20px;
+  background-color: #fafafa;
+}
+
+h1 {
+  color: darkblue;
+}
+
+.main-header {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-bottom: 2px solid #ccc;
+}
+
+.subtitle {
+  font-style: italic;
+  color: #666;
+}
+
+#site-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.content > article {
+  background-color: white;
+  padding: 15px;
+  margin: 10px 0;
+}
+
+.post p {
+  margin-bottom: 10px;
+}
+
+h2 + p {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+p {
+  color: black;
+  font-size: 16px;
+}
+
+.post p {
+  color: darkgreen;
+}
+
+.featured-post p {
+  color: darkred;
+}
+
+.featured-post .intro {
+  color: purple;
+  font-size: 18px;
+}
+
+.card {
+  border: 2px solid #3498db;
+  padding: inherit; 
+}
+
+/* Наследование шрифтов */
+.examples {
+  font-size: 14px;
+  font-weight: normal;
+  padding: 15px;
+}
+
+li:hover {
+  background-color: yellow;
+  cursor: pointer;
+}
+
+li:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.main-header:hover {
+  background-color: #e9e9e9;
+  transition: background-color 0.3s;
+}
+
+p::first-line {
+  font-weight: bold;
+}
+
+.post h2::after {
+  content: " ★";
+  color: gold;
+}
+
+.card::before {
+  content: "→ ";
+  color: green;
+}
+
+.important {
+  color: crimson;
+  border-left: 4px solid currentColor;
+  padding-left: 6px;
+}
+
+/* Медиа-запрос для адаптивности */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+    font-size: 15px;
+  }
+  #site-title {
+    font-size: 1.4rem;
+  }
+  .content > article,
+  .card {
+    padding: 10px;
+  }
+}
+
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.main-header h1 {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+
+:root {
+  --accent: #3498db;
+  --accent-dark: #2c3e50;
+}
+
+.main-footer {
+  margin-top: 20px;
+  padding: 12px;
+  text-align: center;
+  color: var(--accent-dark);
+  border-top: 2px solid var(--accent);
+}
