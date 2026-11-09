@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивная верстка</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Адаптивный сайт</h1>
+            <nav class="nav">
+                <button class="nav-toggle" aria-label="Открыть меню">≡</button>
+                <ul class="nav-menu">
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Услуги</a></li>
+                    <li><a href="#">Портфолио</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="container">
+                <h2>Добро пожаловать</h2>
+                <p>Современный адаптивный дизайн для всех устройств</p>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>Наши преимущества</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Адаптивность</h3>
+                        <p>Работает на всех устройствах</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Скорость</h3>
+                        <p>Быстрая загрузка страниц</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Доступность</h3>
+                        <p>Удобство для всех пользователей</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="container">
+                <article class="main-content">
+                    <h2>Основной контент</h2>
+                    <p>Это главная статья с важной информацией...</p>
+                    <img src="https://via.placeholder.com/800x400" alt="Пример изображения" class="responsive-img">
+                </article>
+                <aside class="sidebar">
+                    <h3>Боковая панель</h3>
+                    <p>Дополнительная информация...</p>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Адаптивный сайт. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+
+            navToggle.addEventListener('click', function () {
+                navMenu.classList.toggle('active');
+            });
+
+            // Закрытие меню при клике на ссылку
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
