@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вёрстка и валидация форм</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Регистрация пользователя</h1>
+      <p>Заполните форму ниже для создания аккаунта</p>
+    </header>
+
+    <main class="main">
+      <form class="registration-form" id="registrationForm" novalidate>
+
+        <!-- Личная информация -->
+        <fieldset class="form-section">
+          <legend>Личная информация</legend>
+
+          <div class="form-group">
+            <label for="firstName" class="required">Имя</label>
+            <input type="text" id="firstName" name="firstName" required
+                   minlength="2" maxlength="50"
+                   placeholder="Введите ваше имя"
+                   autocomplete="given-name">
+            <span class="error-message" id="firstNameError" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="lastName" class="required">Фамилия</label>
+            <input type="text" id="lastName" name="lastName" required
+                   minlength="2" maxlength="50"
+                   placeholder="Введите вашу фамилию"
+                   autocomplete="family-name">
+            <span class="error-message" id="lastNameError" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="required">Email</label>
+            <input type="email" id="email" name="email" required
+                   placeholder="example@mail.com"
+                   autocomplete="email">
+            <span class="error-message" id="emailError" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Телефон</label>
+            <input type="tel" id="phone" name="phone"
+                   pattern="\+7\s?\(?\d{3}\)?\s?\d{3}-?\d{2}-?\d{2}"
+                   placeholder="+7 (999) 999-99-99"
+                   autocomplete="tel">
+            <span class="error-message" id="phoneError" role="alert"></span>
+          </div>
+        </fieldset>
+
+        <!-- Безопасность -->
+        <fieldset class="form-section">
+          <legend>Безопасность</legend>
+
+          <div class="form-group">
+            <label for="password" class="required">Пароль</label>
+            <input type="password" id="password" name="password" required
+                   minlength="8"
+                   pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}"
+                   placeholder="Не менее 8 символов"
+                   autocomplete="new-password">
+            <span class="error-message" id="passwordError" role="alert"></span>
+            <div class="password-requirements">
+              Пароль должен содержать: заглавные и строчные буквы, цифры
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword" class="required">Подтверждение пароля</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required
+                   placeholder="Повторите пароль"
+                   autocomplete="new-password">
+            <span class="error-message" id="confirmPasswordError" role="alert"></span>
+          </div>
+        </fieldset>
+
+        <!-- Дополнительная информация -->
+        <fieldset class="form-section">
+          <legend>Дополнительная информация</legend>
+
+          <div class="form-group">
+            <label for="birthDate">Дата рождения</label>
+            <input type="date" id="birthDate" name="birthDate"
+                   min="1900-01-01" max="2024-12-31">
+            <span class="error-message" id="birthDateError" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="country">Страна</label>
+            <select id="country" name="country">
+              <option value="">Выберите страну</option>
+              <option value="ru">Россия</option>
+              <option value="kz">Казахстан</option>
+              <option value="by">Беларусь</option>
+              <option value="other">Другая</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <span class="group-label">Пол</span>
+            <div class="radio-group" role="radiogroup" aria-label="Пол">
+              <label class="radio-label">
+                <input type="radio" name="gender" value="male">
+                <span class="radio-custom"></span>
+                Мужской
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="gender" value="female">
+                <span class="radio-custom"></span>
+                Женский
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="gender" value="other">
+                <span class="radio-custom"></span>
+                Другой
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <span class="group-label">Интересы</span>
+            <div class="checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" name="interests" value="programming">
+                <span class="checkbox-custom"></span>
+                Программирование
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="interests" value="design">
+                <span class="checkbox-custom"></span>
+                Дизайн
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="interests" value="marketing">
+                <span class="checkbox-custom"></span>
+                Маркетинг
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="bio">О себе</label>
+            <textarea id="bio" name="bio" rows="4"
+                      placeholder="Расскажите немного о себе..."
+                      maxlength="500"></textarea>
+            <div class="char-counter">
+              <span id="charCount">0</span> / 500
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Соглашения и кнопки -->
+        <div class="form-section">
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="terms" name="terms" required>
+              <span class="checkbox-custom"></span>
+              <span>Я принимаю <a href="#">условия использования</a> и
+              <a href="#">политику конфиденциальности</a></span>
+            </label>
+            <span class="error-message" id="termsError" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="newsletter" name="newsletter">
+              <span class="checkbox-custom"></span>
+              <span>Я хочу получать новостную рассылку</span>
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+            <button type="reset" class="btn btn-secondary">Очистить форму</button>
+          </div>
+        </div>
+
+      </form>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2024 Формы и валидация</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
