@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Практическая работа №12 — Обработка событий</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <header id="main-header">
+    <h1>Практическая работа: обработка событий</h1>
+    <p>Реализация JavaScript-обработчиков событий</p>
+  </header>
+
+  <section id="tasks-section">
+    <div class="task-area" id="task1">
+      <h3>Задача 1: Базовые обработчики событий</h3>
+      <div class="event-demo">
+        <button id="basic-btn">Нажми меня</button>
+        <div id="basic-output" class="output">Статус: ожидание события</div>
+        <div class="color-box" id="color-box">Наведи курсор</div>
+        <div id="mouse-output" class="output">Координаты мыши:</div>
+      </div>
+    </div>
+
+    <div class="task-area" id="task2">
+      <h3>Задача 2: События клавиатуры</h3>
+      <div class="keyboard-demo">
+        <input type="text" id="key-input" placeholder="Печатайте здесь...">
+        <div id="key-output" class="output">Информация о нажатой клавише</div>
+        <div class="key-combination">
+          <p>Попробуйте комбинации:</p>
+          <ul><li>Ctrl + S</li><li>Alt + C</li><li>Shift + A</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="task-area" id="task3">
+      <h3>Задача 3: Делегирование событий</h3>
+      <div class="delegation-demo">
+        <div class="item-list" id="item-list">
+          <div class="item" data-id="1">Элемент 1 <button class="delete" type="button" aria-label="Удалить">×</button></div>
+          <div class="item" data-id="2">Элемент 2 <button class="delete" type="button" aria-label="Удалить">×</button></div>
+          <div class="item" data-id="3">Элемент 3 <button class="delete" type="button" aria-label="Удалить">×</button></div>
+        </div>
+        <button id="add-item-btn">Добавить элемент</button>
+        <div id="delegation-output" class="output">Выбранные элементы:</div>
+      </div>
+    </div>
+
+    <div class="task-area" id="task4">
+      <h3>Задача 4: Предотвращение поведения</h3>
+      <div class="prevention-demo">
+        <a href="https://example.com" id="prevent-link" class="prevent-link">Эта ссылка не должна работать</a>
+        <form id="prevent-form" class="prevent-form">
+          <input type="text" name="message" placeholder="Введите текст" required>
+          <button type="submit">Отправить (не должно работать)</button>
+        </form>
+        <div id="prevention-output" class="output">События формы и ссылки перехватываются</div>
+      </div>
+    </div>
+
+    <div class="task-area" id="task5">
+      <h3>Задача 5: Кастомные события</h3>
+      <div class="custom-events-demo">
+        <button id="trigger-custom">Запустить кастомное событие</button>
+        <button id="multiple-listeners">Добавить несколько обработчиков</button>
+        <div id="custom-output" class="output">Кастомные события:</div>
+      </div>
+    </div>
+
+    <div class="task-area" id="task6">
+      <h3>Задача 6: События загрузки и ошибок</h3>
+      <div class="loading-demo">
+        <button id="load-image">Загрузить изображение</button>
+        <button id="load-error">Симулировать ошибку</button>
+        <div id="image-container" class="image-container"></div>
+        <div id="loading-output" class="output">Статус загрузки:</div>
+      </div>
+    </div>
+
+    <div class="task-area" id="task7">
+      <h3>Задача 7: Таймеры и асинхронные события</h3>
+      <div class="timer-demo">
+        <button id="start-timer">Запустить таймер</button>
+        <button id="stop-timer">Остановить таймер</button>
+        <button id="debounce-btn">Тест Debounce</button>
+        <button id="throttle-btn">Тест Throttle</button>
+        <div id="timer-output" class="output">Таймер: 0</div>
+        <div id="async-output" class="output">Асинхронные события:</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="task-area" id="testing">
+    <h3>Тестирование</h3>
+    <button id="run-tests">Запустить тесты</button>
+    <div id="test-results" class="output"></div>
+  </section>
+
+  <footer id="main-footer"><p>Практическая работа №12. Откройте консоль для просмотра логов.</p></footer>
+</div>
+<script src="events-tasks.js"></script>
+<script src="events-tests.js"></script>
+</body>
+</html>
